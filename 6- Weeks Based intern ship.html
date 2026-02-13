@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dizbloom Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 90px; }
+
+    body {
+    animation: fadeIn .4s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+    /* --- REMOVE UNWANTED BOTTOM SPACING --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+hr {
+  margin: 2rem 0; /* keep clean spacing only */
+}
+
+/* Prevent double body usage issues */
+
+
+/* --- RESPONSIVE CLEAN UI FIXES --- */
+@media (max-width: 768px) {
+  nav .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .stat-card {
+    transform: none !important;
+  }
+
+  .robot-card {
+    transform: scale(0.75);
+  }
+
+  footer .grid {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .robot-card {
+    display: none; /* Hide heavy visuals on very small phones */
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent; /*  Smooth Scrolling & UI Polish  */
+}
+
+body > body {
+  display: contents;
+}
+
+    /* NAVBAR LINK HOVER ================= NAVBAR HOVER EFFECTS ================= */
+    .nav-link {
+      position: relative;
+      padding-bottom: 6px;
+      transition: .25s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      transition: .3s ease;
+      border-radius: 10px;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-icon {
+      transition: .25s ease;
+    }
+    .nav-link:hover .nav-icon {
+      transform: translateY(-2px) scale(1.1);
+      filter: drop-shadow(0 0 6px #8b5cf6);
+    }
+
+    /* Career Button Hover */
+    .carrier-btn {
+      position: relative;
+      padding-bottom: 6px;
+      transition: .25s ease;
+    }
+    .carrier-btn::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      transition: .3s ease;
+      border-radius: 10px;
+    }
+    .carrier-btn:hover::after {
+      width: 100%;
+    }
+    .carrier-icon {
+      transition: .25s ease;
+    }
+    .carrier-btn:hover .carrier-icon {
+      transform: translateY(-2px) scale(1.1);
+      filter: drop-shadow(0 0 6px #8b5cf6);
+    }
+
+    /* Dropdown hover */
+    .dropdown-link, .dropdown-item {
+      transition: .25s ease;
+    }
+    .dropdown-link:hover, .dropdown-item:hover {
+      padding-left: 18px;
+      background: rgba(99,102,241,.08);
+    }
+
+    /* ---------- Form Style ---------- */
+
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+    .avatar { transition: transform .5s ease, filter .5s ease; }
+    .avatar:hover {
+      transform: scale(1.05) rotate(-2deg);
+      filter: drop-shadow(0 10px 25px rgba(99,102,241,.35));
+    }
+
+    .field svg { transition: transform .25s ease, filter .25s ease; }
+    .field:focus-within svg {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 6px currentColor);
+    }
+
+    .animate-pop { animation: pop .4s ease; }
+    @keyframes pop { 0%{transform:scale(.6);opacity:0} 100%{transform:scale(1);opacity:1} }
+
+    /* ---------- -------------------     About CSS    --------------------- ---------- */
+    html { scroll-behavior: smooth; }
+
+    .float { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .parallax { transition: transform .15s ease-out; will-change: transform; }
+
+    .glow:hover {
+      filter: drop-shadow(0 0 10px #a78bfa) drop-shadow(0 0 22px #6366f1);
+      transform: scale(1.05);
+      transition: .3s ease;
+    }
+
+    .fade { opacity: 0; transform: translateY(40px); transition: 1s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+
+    /* 3D Floating Card */
+.robot-card {
+  perspective: 1000px;
+}
+.robot-inner {
+  transform-style: preserve-3d;
+  transition: transform .4s ease, box-shadow .4s ease;
+  border-radius: 20px;
+  padding: 10px;
+}
+.robot-card:hover .robot-inner {
+  transform: rotateY(12deg) rotateX(8deg) scale(1.05);
+  box-shadow: 
+    0 20px 40px rgba(99,102,241,.35),
+    0 0 30px rgba(168,85,247,.45);
+}
+
+/* Neon Hover Trail */
+.neon-trail {
+  position: relative;
+}
+.neon-trail::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(99,102,241,.35), transparent 70%);
+  opacity: 0;
+  filter: blur(18px);
+  transition: .4s ease;
+  z-index: -1;
+}
+.neon-trail:hover::after {
+  opacity: 1;
+}
+
+/* Eye Blink Animation */
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  92%, 98% { transform: scaleY(0.1); }
+}
+
+.eye {
+  transform-origin: center;
+  animation: blink 4.5s infinite;
+}
+
+/* Floating */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+  
+.pupil {
+  transition: transform .08s linear;
+}
+
+.eye-glow {
+  filter: drop-shadow(0 0 10px #38bdf8) drop-shadow(0 0 20px #38bdf8);
+}
+
+.robot-card:hover .eye-glow {
+  animation: eyePulse 1.5s infinite alternate;
+}
+
+@keyframes eyePulse {
+  from { filter: drop-shadow(0 0 6px #38bdf8); }
+  to   { filter: drop-shadow(0 0 18px #60a5fa); }
+}
+
+/* ---------- Count Animation ---------- */
+    .ring {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 1.6s cubic-bezier(.22,1.2,.36,1);
+    }
+
+    .stat-card {
+      transition: .3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,.25));
+    }
+
+    .icon {
+      transition: .3s ease;
+    }
+
+    .stat-card:hover .icon {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 12px rgba(255,255,255,.8));
+    }
+
+
+    /* ---------- What's App ---------- */
+    .whatsapp-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.5);
+  animation: pulse 1.6s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+ /* Text tracking animation */
+    .tracking-anim {
+      animation: trackingIn 1.4s ease-out both;
+    }
+
+    @keyframes trackingIn {
+      0% {
+        letter-spacing: 0.5em;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        letter-spacing: normal;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Button glow pulse */
+    .btn-glow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-glow::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(120deg, #6366f1, #8b5cf6, #6366f1);
+      filter: blur(16px);
+      opacity: 0;
+      transition: .4s;
+      z-index: -1;
+    }
+
+    .btn-glow:hover::after {
+      opacity: 1;
+    }
+
+    /* Subtle floating animation */
+    .float-soft {
+      animation: floatSoft 4s ease-in-out infinite;
+    }
+
+    @keyframes floatSoft {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+
+    /* Floating */
+    .float-soft {
+      animation: floatSoft 6s ease-in-out infinite;
+    }
+    @keyframes floatSoft {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    /* Parallax */
+    .parallax {
+      transition: transform .15s ease-out;
+      will-change: transform;
+    }
+
+    /* Particle */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #a78bfa, transparent 70%);
+      opacity: .5;
+      animation: drift 12s linear infinite;
+    }
+    @keyframes drift {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+
+/* ------------------------------------  Floating animation ----------------------------------  */
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Eye blinking */
+    .eye {
+      animation: blink 4s infinite;
+      transform-origin: center;
+    }
+    @keyframes blink {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+
+    /* 3D hover tilt */
+    .tilt {
+      transition: transform .25s ease, filter .25s ease;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,.25));
+    }
+    .tilt:hover {
+      transform: rotateX(10deg) rotateY(-10deg) scale(1.05);
+      filter: drop-shadow(0 20px 40px rgba(99,102,241,.6));
+    }
+
+    @keyframes pop {
+      from { transform: scale(.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-pop { animation: pop .3s ease-out; }
+
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .step-anim {
+      animation: slideIn .4s ease;
+    }
+
+    .nav-link{position:relative}
+    .nav-link::after{
+      content:"";position:absolute;left:0;bottom:-6px;width:0;height:3px;
+      background:linear-gradient(90deg,#6366f1,#22c55e);border-radius:999px;
+      transition:.3s;
+    }
+    .nav-link:hover::after{width:100%}
+    .icon-hover{transition:.25s}
+    .group:hover .icon-hover{transform:scale(1.15)}
+
+
+        /* Hover lift animation */
+    .timeline-card {
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .timeline-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(99,102,241,.25);
+    }
+
+
+    /* ============ Mobile Responsive Styling (Only Mobile) ============ */
+@media (max-width: 640px) {
+
+  /* Section padding reduce */
+  section.py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Heading size adjust */
+  section.py-16 h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Grid gap smaller */
+  section.py-16 .grid {
+    gap: 1rem !important;
+  }
+
+  /* Card compact */
+  .timeline-card {
+    padding: 1rem !important;
+    border-radius: 1rem !important;
+  }
+
+  /* Icon size smaller */
+  .timeline-card .w-14.h-14 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .timeline-card svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+
+  /* Title smaller */
+  .timeline-card h3 {
+    font-size: 0.95rem !important;
+  }
+
+  /* Description smaller */
+  .timeline-card p {
+    font-size: 0.75rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  section.py-16 .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========== Animated Connecting Line ========== */
+.timeline-card {
+  position: relative;
+  overflow: visible;
+}
+
+.timeline-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  width: 2rem;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #ec4899, #22c55e);
+  background-size: 200% 200%;
+  animation: flowLine 2.5s linear infinite;
+  opacity: 0.9;
+}
+
+.timeline-card:last-child::after {
+  display: none;
+}
+
+@keyframes flowLine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Hide connecting line on mobile */
+@media (max-width: 1024px) {
+  .timeline-card::after {
+    display: none;
+  }
+}
+
+/* ========== Glow Step Highlight ========== */
+.timeline-card.glow-step {
+  box-shadow: 0 0 0 rgba(99,102,241,0);
+  animation: glowPulse 1.8s ease-in-out infinite alternate;
+  border: 2px solid rgba(99,102,241,0.6);
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 10px rgba(99,102,241,0.3),
+                0 0 20px rgba(236,72,153,0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(99,102,241,0.7),
+                0 0 45px rgba(34,197,94,0.4);
+  }
+}
+
+  </style>
+  
+</head>
+
+
+
+<!-- Floating WhatsApp Button -->
+<a id="whatsappFloat"
+   href="https://wa.me/911234567890?text=Hello%20Dizbloom%20Team%20I%20want%20to%20know%20more%20about%20your%20services" 
+   target="_blank"
+   class="fixed bottom-5 right-5 z-[999] flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-2xl hover:scale-110 transition whatsapp-pulse">
+
+  <!-- WhatsApp Icon -->
+  <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.3 5.393 0 12.057 0c3.181 0 6.167 1.24 8.413 3.488a11.822 11.822 0 013.497 8.413c-.003 6.664-5.235 11.897-11.9 11.897a11.9 11.9 0 01-5.688-1.448L.057 24z"/>
+  </svg>
+
+  <!-- Tooltip -->
+  <span class="absolute -left-28 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition hidden sm:block">
+    Chat with us 💬
+  </span>
+</a>
+
+
+
+<body class="bg-slate-50 text-gray-800">
+
+
+<!-- --------------------------------- NAVBAR ------------------------------ -->
+
+   <body class="bg-slate-50">
+
+<header class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto px-5 py-3 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">D</div>
+      <span class="font-bold text-indigo-600 text-lg">Dizbloom</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-8 font-medium text-gray-700">
+      <!-- Home -->
+      <a href="index.html" class="nav-link group flex items-center gap-2 hover:text-indigo-600 transition">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#6366f1">
+          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1v-10.5z"/>
+        </svg>
+        Home
+      </a>
+
+      <!-- About -->
+      <a href="#about" class="nav-link group flex items-center gap-2 hover:text-indigo-600 transition">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ec4899">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 22c0-4 4-6 8-6s8 2 8 6"/>
+        </svg>
+        About
+      </a>
+
+      <!-- Career -->
+      <div class="relative group">
+        <button class="nav-link group flex items-center gap-2 hover:text-indigo-600 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#6366f1">
+          <path d="M4 7h16v13H4z"/>
+          <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" fill="#fff"/>
+        </svg>
+          Career
+         
+        </button>
+
+        <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-2">
+        
+          <a href="Job Based Internships.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#22c55e">
+          <path d="M3 6h18v12H3z"/>
+          <path d="M9 6V4h6v2" fill="#fff"/>
+        </svg>
+            Job Based Internships
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="relative group">
+        <button class="nav-link group flex items-center gap-2 hover:text-indigo-600 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#22c55e">
+          <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>
+        </svg>
+          Services
+          <svg class="w-4 h-4 ml-1 text-indigo-400 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-2">
+
+
+          <a href="Markating.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ec4899">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 3" fill="#fff"/>
+            </svg>
+            Digital Marketing
+          </a>
+
+
+          <a href="SSE.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#3b82f6">
+          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7z"/>
+          <circle cx="12" cy="12" r="3.5" fill="#fff"/>
+          </svg>
+            SMM ( Social Media Marketing )
+          </a>
+          <a href="Web App Devp.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#10b981">
+          <path d="M4 5h16v14H4z"/>
+          <path d="M8 9l-2 3 2 3" fill="#fff"/>
+          <path d="M16 9l2 3-2 3" fill="#fff"/>
+        </svg>
+           Web & App Development 
+          </a>
+           
+
+          <a href="E- Comarce Store.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#f59e0b">
+          <path d="M3 4h18l-2 11H5L3 4z"/>
+          <circle cx="9" cy="20" r="2"/>
+          <circle cx="17" cy="20" r="2"/>
+        </svg>
+            E-commerce
+          </a>
+          
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <a href="#contact" class="nav-link group flex items-center gap-2 hover:text-indigo-600 transition">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#f59e0b">
+          <path d="M2 6h20v12H2z"/>
+          <path d="M2 6l10 7 10-7" fill="#fff"/>
+        </svg>
+        Contact
+      </a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button id="openMenu" class="md:hidden">
+      <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+  <div class="p-4 border-b flex justify-between items-center">
+    <span class="font-bold text-indigo-600 text-lg">Menu</span>
+    <button id="closeMenu" class="text-xl">✕</button>
+  </div>
+
+  <div class="p-4 space-y-2">
+
+    <a href="index.html" class="mobile-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#6366f1">
+          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1v-10.5z"/>
+      </svg>
+      Home
+    </a>
+
+    <a href="#about" class="mobile-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ec4899">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 22c0-4 4-6 8-6s8 2 8 6"/>
+      </svg>
+      About
+    </a>
+
+    <!-- Mobile Career Dropdown (with icons like desktop) -->
+    <button class="accordion-btn w-full flex justify-between items-center px-3 py-2 rounded-lg hover:bg-indigo-50" data-target="mCareer">
+      <span class="flex items-center gap-3">
+         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#6366f1">
+          <path d="M4 7h16v13H4z"/>
+          <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" fill="#fff"/>
+        </svg>
+        Career
+      </span>
+      <svg class="w-4 h-4 text-indigo-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div id="mCareer" class="accordion-panel max-h-0 overflow-hidden transition-all duration-300 pl-10">
+      <a href="Job Based Internships.html" class="mobile-link flex items-center gap-3 py-2 hover:text-indigo-600">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#22c55e">
+          <path d="M3 6h18v12H3z"/>
+          <path d="M9 6V4h6v2" fill="#fff"/>
+        </svg>
+        Job Based Internships
+      </a>
+    </div>
+
+    <!-- Mobile Services Dropdown (with icons like desktop) -->
+    <button class="accordion-btn w-full flex justify-between items-center px-3 py-2 rounded-lg hover:bg-indigo-50" data-target="mServices">
+      <span class="flex items-center gap-3">
+         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#22c55e">
+          <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>
+        </svg>
+        Services
+      </span>
+      
+    </button>
+    <div id="mServices" class="accordion-panel max-h-0 overflow-hidden transition-all duration-300 pl-10">
+
+
+      <a href="Markating.html" class="mobile-link flex items-center gap-3 py-2 hover:text-indigo-600">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#ec4899">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 3" fill="#fff"/>
+        </svg>
+        Digital Marketing
+      </a>
+
+
+      <a href="SSE.html" class="mobile-link flex items-center gap-3 py-2 hover:text-indigo-600">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#3b82f6">
+          <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7z"/>
+          <circle cx="12" cy="12" r="3.5" fill="#fff"/>
+        </svg>
+        SMM ( Social Media Marketing )
+      </a>
+      <a href="Web App Devp.html" class="mobile-link flex items-center gap-3 py-2 hover:text-indigo-600">
+       <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#10b981">
+          <path d="M4 5h16v14H4z"/>
+          <path d="M8 9l-2 3 2 3" fill="#fff"/>
+          <path d="M16 9l2 3-2 3" fill="#fff"/>
+        </svg>
+        Web & App Development
+      </a>
+      
+      </a>
+      <a href="E- Comarce Store.html" class="mobile-link flex items-center gap-3 py-2 hover:text-indigo-600">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#f59e0b">
+          <path d="M3 4h18l-2 11H5L3 4z"/>
+          <circle cx="9" cy="20" r="2"/>
+          <circle cx="17" cy="20" r="2"/>
+        </svg>
+        E-commerce
+      </a>
+      
+    </div>
+
+    <a href="#contact" class="mobile-link flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-indigo-50 transition">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#f59e0b">
+          <path d="M2 6h20v12H2z"/>
+          <path d="M2 6l10 7 10-7" fill="#fff"/>
+        </svg>
+      Contact
+    </a>
+
+  </div>
+</div>
+<!-- ------------------------------------  End of Navbar ----------------------------------  -->
+
+
+<body class="bg-slate-70">
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-white pt-28 pb-24">
+
+  <!-- Floating Particles -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="particle left-10 bottom-0"></div>
+    <div class="particle left-1/4 bottom-20"></div>
+    <div class="particle left-1/2 bottom-10"></div>
+    <div class="particle right-10 bottom-0"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+<br>
+   <!-- Animated Heading -->
+    <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-5 leading-tight">
+      <span class="block text-purple-600 tracking-anim">
+        6-Weeks Project Based
+      </span>
+      <span class="block text-gray-900 tracking-anim delay-200">
+        Internship Program
+      </span>
+    </h1>
+
+
+    <p class="text-gray-600 max-w-2xl mx-auto mb-10 text-base md:text-lg">
+     Kickstart your career with hands-on projects and expert guidance. The training is completely free of cost!
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+      <a href="#domains"
+         class="px-8 py-3 rounded-full bg-indigo-600 text-white font-semibold
+                hover:bg-indigo-700 hover:scale-105 transition-all duration-300 shadow-lg">
+        Explore Domains
+      </a>
+
+      <a href="javascript:void(0)"
+         onclick="openApplyModal()"
+         class="px-8 py-3 rounded-full border-2 border-indigo-600 text-indigo-600 font-semibold
+                hover:bg-indigo-600 hover:text-white hover:scale-105 transition-all duration-300 shadow">
+        Apply Now
+      </a>
+    </div>
+  </div>
+
+  <!-- LEFT ROBOT -->
+  <div class="hidden md:block absolute left-6 top-1/2 -translate-y-1/2">
+    <svg data-depth="0.35"
+         class="parallax float-soft w-40"
+         viewBox="0 0 200 200">
+      <rect x="40" y="40" width="120" height="90" rx="20" fill="#6366f1"/>
+      <circle cx="75" cy="80" r="10" fill="#0f172a"/>
+      <circle cx="125" cy="80" r="10" fill="#0f172a"/>
+      <circle cx="75" cy="80" r="4" fill="#38bdf8"/>
+      <circle cx="125" cy="80" r="4" fill="#38bdf8"/>
+      <rect x="70" y="110" width="60" height="8" rx="4" fill="#c7d2fe"/>
+    </svg>
+  </div>
+
+  <!-- RIGHT ROBOT -->
+  <div class="hidden md:block absolute right-6 top-1/2 -translate-y-1/2">
+    <svg data-depth="0.55"
+         class="parallax float-soft w-40"
+         viewBox="0 0 200 200">
+      <rect x="40" y="40" width="120" height="90" rx="20" fill="#22c55e"/>
+      <circle cx="75" cy="80" r="10" fill="#052e16"/>
+      <circle cx="125" cy="80" r="10" fill="#052e16"/>
+      <circle cx="75" cy="80" r="4" fill="#86efac"/>
+      <circle cx="125" cy="80" r="4" fill="#86efac"/>
+      <rect x="70" y="110" width="60" height="8" rx="4" fill="#bbf7d0"/>
+    </svg>
+  </div>
+
+   
+  <!-- PROGRAM TIMELINE -->
+  
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">
+      
+     <br><br> Program Timeline
+    </h2>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Week 1-2 -->
+      <div class="timeline-card bg-white rounded-2xl p-8 text-center shadow-lg">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-indigo-100 flex items-center justify-center">
+          <!-- Graduation Icon -->
+          <svg class="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" d="M12 3L2 9l10 6 10-6-10-6z"/>
+            <path stroke-width="2" d="M2 9v6l10 6 10-6V9"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg">Week 1–2</h3>
+        <p class="text-gray-600 mt-2">
+          Orientation and technical training sessions.
+        </p>
+      </div>
+
+      <!-- Week 3-4 -->
+      <div class="timeline-card bg-white rounded-2xl p-8 text-center shadow-lg">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-purple-100 flex items-center justify-center">
+          <!-- Code Icon -->
+          <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg">Week 3–4</h3>
+        <p class="text-gray-600 mt-2">
+          Work on real-time live development projects.
+        </p>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="timeline-card bg-white rounded-2xl p-8 text-center shadow-lg">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-pink-100 flex items-center justify-center">
+          <!-- Chart Icon -->
+          <svg class="w-7 h-7 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" d="M3 3v18h18"/>
+            <path stroke-width="2" d="M7 13l3-3 4 4 5-5"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg">Week 5</h3>
+        <p class="text-gray-600 mt-2">
+          Performance optimization & advanced concepts.
+        </p>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="timeline-card bg-white rounded-2xl p-8 text-center shadow-lg">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
+          <!-- Briefcase Icon -->
+          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" d="M16 6V4H8v2"/>
+            <rect x="3" y="6" width="18" height="14" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg">Week 6</h3>
+        <p class="text-gray-600 mt-2">
+          Career guidance, resume building & networking.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+<!-- ---------------------------------- ----------------FEATURES-------------------------------  ------------------- -->
+<section class="bg-slate-50 py-5">
+  <div class="max-w-screen-2xl mx-auto px-4 md:px-10">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Feature Card 1 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-md hover:shadow-2xl 
+                  hover:-translate-y-2 transition-all duration-300 border border-slate-100
+                  hover:border-indigo-300">
+
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Colorful SVG -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-center mb-3">
+          Completely Free Training
+        </h3>
+
+        <p class="text-gray-600 text-base text-center leading-relaxed">
+          No-cost training and internship program to help you gain industry-ready experience without any financial burden.
+        </p>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-md hover:shadow-2xl 
+                  hover:-translate-y-2 transition-all duration-300 border border-slate-100
+                  hover:border-emerald-300">
+
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Colorful SVG -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h6m2 9H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-center mb-3">
+          Hands-on Projects
+        </h3>
+
+        <p class="text-gray-600 text-base text-center leading-relaxed">
+          Work on real-world projects and build a strong portfolio that showcases
+          your skills to employers.
+        </p>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div class="group bg-white rounded-3xl p-10 shadow-md hover:shadow-2xl 
+                  hover:-translate-y-2 transition-all duration-300 border border-slate-100
+                  hover:border-amber-300">
+
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Colorful SVG -->
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-bold text-center mb-3">
+          Training & Certification
+        </h3>
+
+        <p class="text-gray-600 text-base text-center leading-relaxed">
+          Get an official certificate on completion. Certification charges are just 
+          <span class="font-semibold text-indigo-600">₹189</span>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- --------------------------- ------------DOMAINS---------------------------  ------------------------ -->
+<section id="domains" class="bg-white py-5">
+  <div class="max-w-screen-2xl mx-auto px-4 md:px-10 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Explore Our Internship Domains
+    </h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+      Choose from cutting-edge domains and start your career journey.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Digital Marketing -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Megaphone Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M11 5l6 4v6l-6 4V5zM5 9v6M3 10v4"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Digital Marketing</h3>
+        <p class="text-sm text-gray-600">Social media, SEO, ads & branding.</p>
+      </div>
+
+      <!-- SEO & Content -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Search Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">SEO & Content</h3>
+        <p class="text-sm text-gray-600">Ranking & content strategies.</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Chat Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M7 8h10M7 12h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Social Media</h3>
+        <p class="text-sm text-gray-600">Campaigns & engagement.</p>
+      </div>
+
+      <!-- Graphic Design -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Palette Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 2a10 10 0 100 20c1.1 0 2-.9 2-2s-1-2-2-2h-1a2 2 0 110-4h2a6 6 0 000-12z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Graphic Design</h3>
+        <p class="text-sm text-gray-600">Creative design skills.</p>
+      </div>
+
+      <!-- Full Stack -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-600 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Code Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Full Stack</h3>
+        <p class="text-sm text-gray-600">Frontend + Backend.</p>
+      </div>
+
+      <!-- Java -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Terminal Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M4 17l6-6-6-6M12 19h8"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Java</h3>
+        <p class="text-sm text-gray-600">Enterprise development.</p>
+      </div>
+
+      <!-- Python -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Puzzle Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M14 7a2 2 0 11-4 0 2 2 0 014 0zM7 7h10v10H7z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Python</h3>
+        <p class="text-sm text-gray-600">Web, ML, automation.</p>
+      </div>
+
+      <!-- Cloud -->
+      <div class="group bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-md 
+                  hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-gradient-to-br from-cyan-500 to-sky-500 
+                    flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+          <!-- Cloud Icon -->
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 15a4 4 0 014-4h1a5 5 0 019.9 1A3.5 3.5 0 0119.5 19H7a4 4 0 01-4-4z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-lg mb-2">Cloud Tech</h3>
+        <p class="text-sm text-gray-600">AWS, Azure, GCP.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- --------------------------------------  CTA SECTION ------------------------------ -->
+
+<section class="relative overflow-hidden bg-indigo-600 py-24 text-white">
+  <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-5 tracking-tight">
+      Ready to Start Your Journey?
+    </h2>
+
+    <p class="max-w-2xl mx-auto text-indigo-100 mb-10 text-base md:text-lg">
+      Gain practical skills, build your portfolio, and get certified. All for an
+      affordable price to validate your expertise.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+      <span class="inline-block px-8 py-3 rounded-2xl bg-white text-indigo-700 font-semibold shadow-lg">
+        Certification Fee: ₹189
+      </span>
+
+      <a href="javascript:void(0)"
+         onclick="openApplyModal()"
+         class="inline-flex items-center justify-center px-10 py-3 rounded-full bg-white text-indigo-700 font-semibold
+                hover:bg-indigo-50 hover:scale-110 hover:shadow-2xl transition-all duration-300">
+        Apply Now 🚀
+      </a>
+    </div>
+  </div>
+
+  <!-- LEFT ROBOT -->
+  <div class="hidden md:block absolute left-10 bottom-10 float">
+    <svg class="robot tilt" width="120" height="120" viewBox="0 0 200 200">
+      <rect x="40" y="50" width="120" height="90" rx="20" fill="#fff"/>
+      <circle cx="80" cy="90" r="10" fill="#1e3a8a"/>
+      <circle cx="120" cy="90" r="10" fill="#1e3a8a"/>
+      <circle class="eye" cx="80" cy="90" r="5" fill="#22c55e"/>
+      <circle class="eye" cx="120" cy="90" r="5" fill="#22c55e"/>
+      <rect x="80" y="120" width="40" height="6" rx="3" fill="#c7d2fe"/>
+    </svg>
+  </div>
+
+  <!-- RIGHT ROBOT -->
+  <div class="hidden md:block absolute right-10 bottom-10 float">
+    <svg class="robot tilt" width="120" height="120" viewBox="0 0 200 200">
+      <rect x="40" y="50" width="120" height="90" rx="20" fill="#fff"/>
+      <circle cx="80" cy="90" r="10" fill="#1e3a8a"/>
+      <circle cx="120" cy="90" r="10" fill="#1e3a8a"/>
+      <circle class="eye" cx="80" cy="90" r="5" fill="#22c55e"/>
+      <circle class="eye" cx="120" cy="90" r="5" fill="#22c55e"/>
+      <rect x="80" y="120" width="40" height="6" rx="3" fill="#c7d2fe"/>
+    </svg>
+  </div>
+
+  <!-- Glow -->
+  <div class="absolute -top-20 -left-20 w-80 h-80 bg-purple-400 rounded-full blur-3xl opacity-30"></div>
+  <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-blue-400 rounded-full blur-3xl opacity-30"></div>
+</section>
+
+<!--  -------------------- APPLY MODAL --------------------------- -->
+<div id="applyModal"
+  class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+
+  <div class="relative bg-white w-full max-w-xl rounded-2xl shadow-2xl p-6 md:p-8 overflow-hidden">
+
+    <!-- Close -->
+    <button onclick="closeModal()"
+      class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-gray-600">✕</button>
+
+    <!-- LEFT STUDENT SVG -->
+    <div class="hidden md:block absolute -left-20 bottom-10 float opacity-70">
+      <svg width="140" height="140" viewBox="0 0 200 200">
+        <circle cx="100" cy="60" r="25" fill="#6366f1"/>
+        <rect x="60" y="95" width="80" height="70" rx="20" fill="#818cf8"/>
+      </svg>
+    </div>
+
+    <!-- RIGHT STUDENT SVG -->
+    <div class="hidden md:block absolute -right-20 top-10 float opacity-70">
+      <svg width="140" height="140" viewBox="0 0 200 200">
+        <circle cx="100" cy="60" r="25" fill="#22c55e"/>
+        <rect x="60" y="95" width="80" height="70" rx="20" fill="#4ade80"/>
+      </svg>
+    </div>
+
+    <!-- FORM STEP 1 -->
+    <div id="step1" class="step-anim">
+      <h3 class="text-2xl font-bold mb-2">Apply for 6-Months Job Based Internship</h3>
+      <p class="text-sm text-gray-500 mb-6">Step 1 of 2 – Personal Details (required)</p>
+
+      <div class="space-y-4">
+        <div>
+          <div class="relative">
+            <span class="absolute left-3 top-2.5">👤</span>
+            <input id="name" name="name" type="text" placeholder="Your Name" required
+              class="w-full pl-10 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+          </div>
+          <p id="nameError" class="text-xs text-red-500 mt-1 hidden">Name is required</p>
+        </div>
+
+        <div>
+          <div class="relative">
+            <span class="absolute left-3 top-2.5">📧</span>
+            <input id="email" name="email" type="email" placeholder="Email" required
+              class="w-full pl-10 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+          </div>
+          <p id="emailError" class="text-xs text-red-500 mt-1 hidden">Enter a valid email</p>
+        </div>
+
+        <div>
+          <div class="relative">
+            <span class="absolute left-3 top-2.5">📱</span>
+            <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[0-9]{10}" placeholder="Phone (10 digits)" required maxlength="10"
+              class="w-full pl-10 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+          </div>
+          <p id="phoneError" class="text-xs text-red-500 mt-1 hidden">Phone number is required</p> 
+        </div>
+
+        <button onclick="nextStep()"
+          class="w-full py-3 rounded-full bg-indigo-600 text-white font-semibold hover:scale-105 transition">
+          Next →
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" class="hidden step-anim">
+      <h3 class="text-2xl font-bold mb-2">Choose Your Domain</h3>
+      <p class="text-sm text-gray-500 mb-6">Step 2 of 2 – Domain Selection</p>
+
+      <div class="space-y-4">
+        <div>
+          <select id="domain" required
+            class="w-full py-2 px-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
+            <option value="">Select Domain</option>
+            <option>Full Stack Web Development</option>
+            <option>Java Technology</option>
+            <option>Python Development</option>
+            <option>Digital Marketing</option>
+            <option>Cloud Technology</option>
+          </select>
+          <p id="domainError" class="text-xs text-red-500 mt-1 hidden">Please select a domain</p>
+        </div>
+
+        <textarea placeholder="Why do you want to join?"
+          class="w-full h-24 p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+
+        <div class="flex gap-3">
+          <button onclick="prevStep()"
+            class="flex-1 py-3 rounded-full border border-gray-300 hover:bg-gray-100 transition">
+            ← Back
+          </button>
+
+          <button onclick="submitForm()"
+            class="flex-1 py-3 rounded-full bg-green-600 text-white font-semibold hover:scale-105 transition">
+            Submit 🚀
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="successBox" class="hidden text-center py-12">
+      <div class="text-5xl mb-3">🎉</div>
+      <h4 class="text-2xl font-bold text-green-600">Application Submitted!</h4>
+      <p class="text-gray-500 mt-2">Our team will contact you soon.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ---------- -------------------------------------------------------------------------------- ---------- -->
+
+
+
+<!-- ================= CONSULTANCY FORM MODAL ================= -->
+<div id="consultModal" 
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] hidden items-center justify-center px-4">
+
+  <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl p-6 md:p-10 relative animate-pop">
+
+    <!-- Close -->
+    <button id="closeConsultForm"
+      class="absolute top-3 right-3 w-9 h-9 rounded-full bg-gray-100 hover:bg-red-500 hover:text-white transition flex items-center justify-center text-xl font-bold">
+      ×
+    </button>
+
+    <!-- FORM WRAPPER -->
+    <div id="consultFormWrapper">
+
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-600 mb-2">
+        Dizbloom Consultancy Form
+      </h2>
+      <p class="text-center text-gray-500 mb-8">
+        Share your requirement & our experts will contact you 🚀
+      </p>
+
+      <form id="consultForm" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+        <!-- Name -->
+        <div>
+          <input id="cname" type="text" placeholder="Your Full Name"
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition">
+          <p id="cnameError" class="text-sm text-red-500 hidden mt-1">Name is required</p>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <input id="cemail" type="email" placeholder="Email Address"
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none transition">
+          <p id="cemailError" class="text-sm text-red-500 hidden mt-1">Enter a valid email</p>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <input id="cphone" type="tel" placeholder="Mobile Number"
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none transition">
+          <p id="cphoneError" class="text-sm text-red-500 hidden mt-1">Enter valid 10-digit number</p>
+        </div>
+
+        <!-- Service -->
+        <div>
+          <select id="cservice"
+            class="w-full p-3 border rounded-lg text-gray-600 focus:ring-2 focus:ring-pink-500 outline-none transition">
+            <option value="" selected disabled>Select Consultancy Type</option>
+            <option>Software Development</option>
+            <option>Digital Marketing</option>
+            <option>Website Development</option>
+            <option>Business Consultancy</option>
+            <option>Internship Guidance</option>
+          </select>
+          <p id="cserviceError" class="text-sm text-red-500 hidden mt-1">Please select a service</p>
+        </div>
+
+        <!-- Message -->
+        <div class="md:col-span-2">
+          <textarea id="cmessage" rows="4" placeholder="Describe your requirement..."
+            class="w-full p-3 border rounded-lg resize-none focus:ring-2 focus:ring-rose-500 outline-none transition"></textarea>
+          <p id="cmessageError" class="text-sm text-red-500 hidden mt-1">Message is required</p>
+        </div>
+
+        <!-- Submit -->
+        <div class="md:col-span-2 text-center mt-4">
+          <button type="submit"
+            class="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300">
+            Submit Consultancy Request
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="consultSuccess" class="hidden text-center py-16">
+      <div class="mx-auto w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-5 animate-pop">
+        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-green-600 mb-2">Request Submitted!</h3>
+      <p class="text-gray-500">We’ll contact you shortly 🚀</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about" class="relative py-32 bg-gradient-to-br from-indigo-50 via-white to-purple-100 overflow-hidden">
+
+  <!-- CORNER ROBOTS & ROBOT CARD & ROBOT WITH TRACKING EYES -->
+<div class="robot-card absolute top-6 left-6 parallax" data-depth="0.35">
+  <div class="robot-inner neon-trail float">
+
+    <svg id="robot1" width="140" height="140" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Head -->
+      <rect x="40" y="40" width="120" height="90" rx="20" fill="#6366f1"/>
+
+      <!-- Eye sockets -->
+      <circle cx="75" cy="80" r="12" fill="#1e1b4b"/>
+      <circle cx="125" cy="80" r="12" fill="#1e1b4b"/>
+
+      <!-- Pupils (move these) -->
+      <circle class="pupil" cx="75" cy="80" r="5" fill="#38bdf8"/>
+      <circle class="pupil" cx="125" cy="80" r="5" fill="#38bdf8"/>
+
+      <!-- Glow -->
+      <circle class="eye-glow" cx="75" cy="80" r="10" fill="none"/>
+      <circle class="eye-glow" cx="125" cy="80" r="10" fill="none"/>
+
+      <!-- Mouth -->
+      <rect x="70" y="105" width="60" height="8" rx="4" fill="#c7d2fe"/>
+    </svg>
+
+  </div>
+</div>
+
+
+<!-- ROBOT – BOTTOM RIGHT -->
+<div class="robot-card absolute bottom-6 right-6 parallax" data-depth="0.6">
+  <div class="robot-inner neon-trail float-alt">
+
+    <svg id="robot2" width="140" height="140" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Head -->
+      <rect x="40" y="40" width="120" height="90" rx="20" fill="#22c55e"/>
+
+      <!-- Eye sockets -->
+      <circle cx="75" cy="80" r="12" fill="#052e16"/>
+      <circle cx="125" cy="80" r="12" fill="#052e16"/>
+
+      <!-- Pupils -->
+      <circle class="pupil" cx="75" cy="80" r="5" fill="#86efac"/>
+      <circle class="pupil" cx="125" cy="80" r="5" fill="#86efac"/>
+
+      <!-- Glow -->
+      <circle class="eye-glow eye-glow-green" cx="75" cy="80" r="10" fill="none"/>
+      <circle class="eye-glow eye-glow-green" cx="125" cy="80" r="10" fill="none"/>
+
+      <!-- Mouth -->
+      <rect x="70" y="105" width="60" height="8" rx="4" fill="#bbf7d0"/>
+    </svg>
+
+  </div>
+</div>
+
+  <!-- CONTENT -->
+  <div class="max-w-screen-xl mx-auto px-6 text-center relative z-10 fade">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      About Dizbloom Technologies
+    </h2>
+
+    <p class="text-gray-700 mb-4 leading-relaxed max-w-3xl mx-auto">
+      At Dizbloom Technologies, we empower businesses through innovation. Our expert team in software development
+      and digital marketing builds scalable, result-driven digital solutions.
+    </p>
+
+    <p class="text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto">
+      From custom software to complete digital strategies, we help brands grow, scale, and succeed in the modern
+      digital ecosystem.
+    </p>
+
+    <!-- Tech Badge -->
+    <div class="flex justify-center gap-3 flex-wrap">
+      <span id="techBadge" class="px-5 py-2 rounded-full bg-indigo-600/90 text-white font-medium shadow">
+        Java
+      </span>
+    </div>
+  </div>
+
+  <!-- Glow Background -->
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-400 rounded-full blur-3xl opacity-30"></div>
+  <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-400 rounded-full blur-3xl opacity-30"></div>
+</section>
+
+<!-- STATS -->
+<section id="stats" class="bg-gradient-to-r from-indigo-600 to-purple-700 py-12 md:py-20 text-white">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-6">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 text-center">
+
+      <!-- Happy Clients -->
+      <div class="stat-card flex flex-col items-center gap-3">
+        <div class="relative w-20 h-20 md:w-24 md:h-24">
+          <svg viewBox="0 0 120 120" class="w-full h-full">
+            <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,.2)" stroke-width="8" fill="none"/>
+            <circle class="ring" cx="60" cy="60" r="52" stroke="#fff" stroke-width="8" fill="none"
+              stroke-dasharray="327" stroke-dashoffset="327" data-progress="65"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-6 h-6 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+        </div>
+        <div class="text-2xl md:text-4xl font-extrabold">
+          <span class="counter" data-target="1800">0</span>+
+        </div>
+        <p class="text-indigo-100 text-sm">Happy Clients</p>
+      </div>
+
+      <!-- Projects -->
+      <div class="stat-card flex flex-col items-center gap-3">
+        <div class="relative w-20 h-20 md:w-24 md:h-24">
+          <svg viewBox="0 0 120 120" class="w-full h-full">
+            <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,.2)" stroke-width="8" fill="none"/>
+            <circle class="ring" cx="60" cy="60" r="52" stroke="#fff" stroke-width="8" fill="none"
+              stroke-dasharray="327" stroke-dashoffset="327" data-progress="85"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-6 h-6 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                d="M3 3h18v6H3zM3 9h18v12H3z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="text-2xl md:text-4xl font-extrabold">
+          <span class="counter" data-target="1000">0</span>+
+        </div>
+        <p class="text-indigo-100 text-sm">Students Enrolled up to now</p>
+      </div>
+
+      <!-- Support -->
+      <div class="stat-card flex flex-col items-center gap-3">
+        <div class="relative w-20 h-20 md:w-24 md:h-24">
+          <svg viewBox="0 0 120 120" class="w-full h-full">
+            <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,.2)" stroke-width="8" fill="none"/>
+            <circle class="ring" cx="60" cy="60" r="52" stroke="#fff" stroke-width="8" fill="none"
+              stroke-dasharray="327" stroke-dashoffset="327" data-progress="100"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-6 h-6 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="text-2xl md:text-4xl font-extrabold">
+          <span class="counter" data-target="24">0</span>/7
+        </div>
+        <p class="text-indigo-100 text-sm">Support</p>
+      </div>
+
+      <!-- Rating -->
+      <div class="stat-card flex flex-col items-center gap-3">
+        <div class="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-white/10 rounded-full">
+          <div class="text-yellow-300 text-3xl">★</div>
+        </div>
+        <div class="text-2xl md:text-4xl font-extrabold">
+          4.1<span class="text-base font-medium">/5</span>
+        </div>
+        <p class="text-indigo-100 text-sm">Client Rating</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------- CONTACT ------------------------------------- -->
+<section id="contact">
+ <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-slate-100 px-4">
+
+<section class="max-w-9xl w-full bg-white rounded-2xl shadow-xl p-6 md:p-10">
+  <h1 class="text-3xl font-bold text-center mb-10">Get in Touch </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+    <!-- Left SVG Avatar -->
+    <div class="hidden md:flex justify-center">
+      <svg width="360" height="360" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+           class="animate-float avatar">
+        <circle cx="100" cy="55" r="28" fill="#6366f1"/>
+        <rect x="55" y="95" width="90" height="70" rx="22" fill="#4f46e5"/>
+        <rect x="28" y="110" width="30" height="55" rx="15" fill="#22c55e"/>
+        <rect x="142" y="110" width="30" height="55" rx="15" fill="#22c55e"/>
+        <rect x="75" y="165" width="18" height="28" rx="9" fill="#f59e0b"/>
+        <rect x="107" y="165" width="18" height="28" rx="9" fill="#f59e0b"/>
+      </svg>
+    </div>
+
+    <!-- Form -->
+    <div>
+      <form id="contactForm" class="space-y-4">
+
+        <!-- Name -->
+        <div class="field relative">
+          <svg class="w-5 h-5 absolute left-3 top-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M5.121 17.804A7 7 0 1112 19a7 7 0 01-6.879-1.196z"/>
+          </svg>
+          <input id="contactName" type="text" placeholder="Your Name"
+            class="w-full pl-10 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+          <p class="text-sm text-red-500 hidden" id="contactNameError">Name is required</p>
+        </div>
+
+        <!-- Email -->
+        <div class="field relative">
+          <svg class="w-5 h-5 absolute left-3 top-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
+          </svg>
+          <input id="contactEmail" type="email" placeholder="Your Email"
+            class="w-full pl-10 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
+          <p class="text-sm text-red-500 hidden" id="contactEmailError">Valid email is required</p>
+        </div>
+
+        <!-- Service -->
+        <div class="field relative">
+          <svg class="w-5 h-5 absolute left-3 top-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12h6m2 9H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z"/>
+          </svg>
+          <select id="contactService"
+            class="w-full pl-10 p-3 border rounded-lg text-gray-600 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+            <option value="" disabled selected>Select a Service</option>
+            <option>Software Development</option>
+            <option>Digital Marketing</option>
+            <option>Both (Software + Marketing)</option>
+            <option>Internship</option>
+            <option>Other</option>
+          </select>
+          <p class="text-sm text-red-500 hidden" id="contactServiceError">Please select a service</p>
+        </div>
+
+        <!-- Message -->
+        <div class="field relative">
+          <svg class="w-5 h-5 absolute left-3 top-3.5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+          <textarea id="contactMessage" placeholder="Your Message"
+            class="w-full pl-10 p-3 border rounded-lg h-28 resize-none focus:outline-none focus:ring-2 focus:ring-rose-500 transition"></textarea>
+          <p class="text-sm text-red-500 hidden" id="contactMessageError">Message is required</p>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+          Send Message
+        </button>
+      </form>
+
+      <!-- Success -->
+      <div id="contactSuccessBox" class="hidden text-center py-10">
+        <div class="mx-auto w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4 animate-pop">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-green-600">Message Sent Successfully!</h3>
+        <p class="text-gray-500 mt-1">We’ll get back to you shortly 🚀</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ------------------------------------- FOOTER  ---------------------------------------- -->
+<footer class="bg-gradient-to-r from-slate-900 via-slate-900 to-indigo-950 text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- Top Content -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start text-center md:text-left">
+
+      <!-- Brand -->
+      <div>
+        <h3 class="text-xl font-bold text-white mb-2">Dizbloom Technologies</h3>
+        <p class="text-gray-400 leading-relaxed text-sm max-w-sm mx-auto md:mx-0">
+          Empowering businesses with innovative software solutions and strategic digital marketing services.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-base font-semibold text-white mb-2">Contact</h4>
+        <p class="text-gray-400 text-sm mb-1">
+          Email:
+          <a href="mailto:info@dizbloomtech.com" class="text-indigo-400 hover:underline">
+            info@dizbloomtech.com
+          </a>
+        </p>
+        <p class="text-gray-400 text-sm">
+          Phone:
+          <a href="tel:+911234567890" class="text-indigo-400 hover:underline">
+            +91 12345 67890
+          </a>
+        </p>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-base font-semibold text-white mb-2">Connect With Us</h4>
+
+        <!-- Center on mobile, left on desktop -->
+        <div class="flex gap-3 justify-center md:justify-start">
+
+          <!-- LinkedIn -->
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-indigo-600 transition">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.602 0 4.268 2.372 4.268 5.455v6.286zM5.337 7.433a2.067 2.067 0 110-4.134 2.067 2.067 0 010 4.134zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-indigo-600 transition">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5C19.216 2 22 4.784 22 7.75v8.5C22 19.216 19.216 22 16.25 22h-8.5C4.784 22 2 19.216 2 16.25v-8.5C2 4.784 4.784 2 7.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a.75.75 0 110 1.5.75.75 0 010-1.5z"/>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-indigo-600 transition">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.305-5.467-1.332-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.234 1.911 1.234 3.221 0 4.61-2.807 5.624-5.479 5.921.43.37.823 1.102.823 2.222v3.293c0 .319.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-white/10 mt-4 pt-3 text-center text-xs text-gray-400">
+      © 2026 Dizbloom Technologies. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- -------- ------------------- Js SCRIPTS ------------- -------------- -->
+
+<script>
+/* ---------------------- WhatsApp Popup (Safe) ---------------------- */
+const popup = document.getElementById("mobileWhatsappPopup");
+const closeWhatsappBtn = document.getElementById("closeWhatsappPopup");
+
+if (popup && closeWhatsappBtn) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile && !localStorage.getItem("mobileWhatsappShown")) {
+    setTimeout(() => {
+      popup.classList.remove("hidden");
+      localStorage.setItem("mobileWhatsappShown", "true");
+    }, 4000);
+  }
+
+  closeWhatsappBtn.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+}
+
+/* ---------------------- Contact Form ---------------------- */
+const contactForm = document.getElementById("contactForm");
+const contactSuccess = document.getElementById("contactSuccessBox");
+
+if (contactForm && contactSuccess) {
+  contactForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    let valid = true;
+
+    const name = document.getElementById("contactName");
+    const email = document.getElementById("contactEmail");
+    const service = document.getElementById("contactService");
+    const message = document.getElementById("contactMessage");
+
+    ["contactNameError","contactEmailError","contactServiceError","contactMessageError"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add("hidden");
+    });
+
+    if (!name.value || !name.value.trim()){ document.getElementById("contactNameError")?.classList.remove("hidden"); valid=false; }
+    if (!email.value || !email.value.includes("@")){ document.getElementById("contactEmailError")?.classList.remove("hidden"); valid=false; }
+    if (!service.value){ document.getElementById("contactServiceError")?.classList.remove("hidden"); valid=false; }
+    if (!message.value || !message.value.trim()){ document.getElementById("contactMessageError")?.classList.remove("hidden"); valid=false; }
+
+    if (valid){
+      contactForm.classList.add("hidden");
+      contactSuccess.classList.remove("hidden");
+
+      // Clear inputs
+      try{
+        name.value = '';
+        email.value = '';
+        service.value = '';
+        message.value = '';
+      }catch(e){}
+
+      // After 4s return to form and hide success
+      setTimeout(() => {
+        contactSuccess.classList.add('hidden');
+        contactForm.classList.remove('hidden');
+      }, 4000);
+    }
+  });
+}
+
+/* ---------------------- Fade In ---------------------- */
+const fadeEl = document.querySelector(".fade");
+if (fadeEl) {
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) fadeEl.classList.add("show");
+    });
+  }, { threshold: 0.3 });
+
+  fadeObserver.observe(fadeEl);
+}
+
+/* ---------------------- Tech Badge Rotation ---------------------- */
+const techBadge = document.getElementById("techBadge");
+if (techBadge) {
+  const techs = ["Java", "Python", "React", "Node.js", "MySQL", "AWS", "Tailwind CSS"];
+  let i = 0;
+  setInterval(() => {
+    techBadge.textContent = techs[i++ % techs.length];
+  }, 1400);
+}
+
+/* ---------------------- Parallax Robots ---------------------- */
+const robots = document.querySelectorAll(".parallax");
+if (robots.length) {
+  document.addEventListener("mousemove", e => {
+    const x = (window.innerWidth / 2 - e.clientX) / 40;
+    const y = (window.innerHeight / 2 - e.clientY) / 40;
+    robots.forEach(robot => {
+      const depth = robot.getAttribute("data-depth") || 1;
+      robot.style.transform = `translate(${x * depth}px, ${y * depth}px)`;
+    });
+  });
+}
+
+/* ---------------------- Eye Tracking ---------------------- */
+document.addEventListener("mousemove", e => {
+  document.querySelectorAll("svg").forEach(svg => {
+    const pupils = svg.querySelectorAll(".pupil");
+    if (!pupils.length) return;
+
+    const rect = svg.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+    const maxMove = 4;
+
+    pupils.forEach(pupil => {
+      const dx = Math.cos(angle) * maxMove;
+      const dy = Math.sin(angle) * maxMove;
+      pupil.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+  });
+});
+
+/* ---------------------- Stats Counter ---------------------- */
+const counters = document.querySelectorAll(".counter");
+const rings = document.querySelectorAll(".ring");
+let started = false;
+
+function animateStats() {
+  counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    let current = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function animate(time) {
+      const progress = Math.min((time - startTime) / duration, 1);
+      current = Math.floor(progress * target);
+      counter.innerText = current;
+      if (progress < 1) requestAnimationFrame(animate);
+      else counter.innerText = target;
+    }
+    requestAnimationFrame(animate);
+  });
+
+  rings.forEach(ring => {
+    const percent = ring.dataset.progress;
+    const circumference = 327;
+    ring.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+  });
+}
+
+const statsSection = document.getElementById("stats");
+if (statsSection) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        started = true;
+        animateStats();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(statsSection);
+}
+
+/* ---------------------- Apply Modal ---------------------- */
+function openApplyModal() {
+  const modal = document.getElementById("applyModal");
+  if (!modal) return;
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+}
+
+function closeModal() {
+  const modal = document.getElementById("applyModal");
+  if (!modal) return;
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+}
+
+function nextStep() {
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const phone = document.getElementById('phone');
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const phoneError = document.getElementById('phoneError');
+
+  let valid = true;
+
+  if (!name || name.value.trim() === '') {
+    nameError?.classList.remove('hidden');
+    valid = false;
+  } else {
+    nameError?.classList.add('hidden');
+  }
+
+  if (!email || !email.checkValidity()) {
+    emailError?.classList.remove('hidden');
+    valid = false;
+  } else {
+    emailError?.classList.add('hidden');
+  }
+
+  if (!phone || !phone.checkValidity()) {
+    phoneError?.classList.remove('hidden');
+    valid = false;
+  } else {
+    phoneError?.classList.add('hidden');
+  }
+
+  if (!valid) return;
+
+  document.getElementById("step1")?.classList.add("hidden");
+  document.getElementById("step2")?.classList.remove("hidden");
+}
+
+function prevStep() {
+  document.getElementById("step2")?.classList.add("hidden");
+  document.getElementById("step1")?.classList.remove("hidden");
+}
+
+function submitForm() {
+  const domain = document.getElementById('domain');
+  const domainError = document.getElementById('domainError');
+
+  if (!domain || domain.value === '') {
+    domainError?.classList.remove('hidden');
+    return;
+  } else {
+    domainError?.classList.add('hidden');
+  }
+
+  document.getElementById("step2")?.classList.add("hidden");
+  document.getElementById("successBox")?.classList.remove("hidden");
+}
+
+/* ---------------------- Mobile Menu ---------------------- */
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+
+if (openMenu && closeMenu && mobileMenu) {
+  openMenu.onclick = () => mobileMenu.classList.remove("translate-x-full");
+  closeMenu.onclick = () => mobileMenu.classList.add("translate-x-full");
+
+  document.querySelectorAll(".mobile-link").forEach(link => {
+    link.addEventListener("click", () => mobileMenu.classList.add("translate-x-full"));
+  });
+}
+
+/* ---------------------- Mobile Accordion ---------------------- */
+document.querySelectorAll(".accordion-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const panel = document.getElementById(btn.dataset.target);
+    if (!panel) return;
+    panel.classList.toggle("max-h-60");
+    panel.classList.toggle("max-h-0");
+  });
+});
+
+const timelineSteps = document.querySelectorAll(".timeline-card");
+  let currentStep = 0;
+
+  setInterval(() => {
+    timelineSteps.forEach(step => step.classList.remove("glow-step"));
+    timelineSteps[currentStep].classList.add("glow-step");
+    currentStep = (currentStep + 1) % timelineSteps.length;
+  }, 2200);
+</script>
+
+
+
+</body>
+</html>
